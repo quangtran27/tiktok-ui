@@ -1,0 +1,124 @@
+.wrapper {
+    --search-border-radius: 92px;
+    --search-icon-color: #a7a7ab;
+    --search-height: 46px;
+    --search-splitter-color: rgba(22, 24, 35, 0.12);
+
+    width: 100%;
+    height: var(--default-layout-header-height);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    display: flex;
+    justify-content: center;
+}
+
+.inner {
+    height: 100%;
+    width: var(--default-layout-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    align-items: center;
+    background-color: #f1f1f2;
+    border: 1.5px solid transparent;
+    border-radius: var(--search-border-radius);
+    display: flex;
+    height: var(--search-height);
+    padding-left: 20px;
+    width: 361px;
+
+    input {
+        background-color: transparent;
+        border: none;
+        caret-color: var(--primary);
+        color: var(--text-color);
+        flex: 1;
+        font-size: 1.6rem;
+        font-weight: 400;
+        height: 100%;
+        outline: none;
+        position: relative;
+
+        &:not(:placeholder-shown) ~ .search-btn {
+            color: var(--gray);
+        }
+        &:not(:placeholder-shown) ~ .clear {
+            display: block;
+        }
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.search-result {
+    position: relative;
+    top: -2px;
+    width: 361px;
+}
+
+.search-title {
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 500;
+    height: 30px;
+    line-height: 20px;
+    padding: 5px 12px;
+}
+
+.clear {
+    display: none;
+    color: var(--search-icon-color);
+    font-size: 1.5rem;
+}
+
+.loading {
+    display: none;
+    color: var(--search-icon-color);
+    font-size: 1.5rem;
+}
+
+.splitter {
+    background-color: var(--search-splitter-color);
+    display: inline-block;
+    height: calc(var(--search-height) - 18px);
+    margin-left: 16px;
+    width: 0.5px;
+    z-index: 2;
+}
+
+.search-btn {
+    border: none;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    color: var(--search-icon-color);
+    font-size: 1.8rem;
+    height: 100%;
+    outline: none;
+    width: 52px;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.more-btn {
+    background-color: transparent;
+    font-size: 2.2rem;
+    padding: 0 20px;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
