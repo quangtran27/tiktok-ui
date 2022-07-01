@@ -1,16 +1,16 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
     --black: #000;
     --light-gray: rgba(22, 24, 35, 0.12);
     --gray: #808080;
     --primary: #fe2c55;
-    --text-color: #333;
+    --text-color: #161823;
     --white: #fff;
 
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --default-layout-horizontal-spacer: 20px;
 }
 
 * {
@@ -24,11 +24,15 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'ProximaNova', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
+
+    input {
+        font-family: 'ProximaNova', sans-serif;
+    }
 }
 
 button,
@@ -41,4 +45,51 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+// Fonts embeded
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: SofiaPro;
+    src: url('/assets/fonts/sofiapro-bold.woff2');
+    font-weight: 700;
+}
+
+// Custom tippy tool tip
+body {
+    .tippy-box {
+        border-radius: 8px;
+        background-color: rgba(84, 84, 84, 0.92);
+        font-family: 'ProximaNova', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 8px;
+    }
+
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        color: rgba(84, 84, 84, 0.92);
+        top: -8px;
+    }
+
+    .tippy-content {
+        padding: 0;
+    }
 }

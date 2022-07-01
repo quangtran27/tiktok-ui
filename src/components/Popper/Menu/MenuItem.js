@@ -4,9 +4,9 @@ import Button from '~/components/Button'
 
 const cx = classNames.bind(styles)
 
-function MenuItem({ data }) {
+function MenuItem({ data, onClick }) {
     return (
-        <Button large className={cx('menu-item')} style={{ border: 'none' }} text to={data.to}>
+        <Button large className={cx('menu-item')} style={{ border: 'none' }} to={data.to} onClick={onClick}>
             {data.icon}
             {data.title}
         </Button>
