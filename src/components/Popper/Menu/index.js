@@ -9,7 +9,7 @@ import { useState } from 'react'
 
 const cx = classNames.bind(styles)
 
-function Menu({ children, items = [] }) {
+function Menu({ children, items = [], hideOnClick = false }) {
     const [history, setHistory] = useState([{ data: items }])
     const current = history[history.length - 1]
 
@@ -34,6 +34,7 @@ function Menu({ children, items = [] }) {
     return (
         <Tippy
             delay={[300, 200]}
+            hideOnClick={hideOnClick}
             interactive
             placement='bottom-end'
             render={(attrs) => (
@@ -47,7 +48,9 @@ function Menu({ children, items = [] }) {
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-items-wrapper')}>
+                            <div className={cx('menu-items')}>{renderItems()}</div>
+                        </div>
                     </Wrapper>
                 </div>
             )}

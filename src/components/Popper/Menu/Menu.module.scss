@@ -1,6 +1,16 @@
-// Menu Wrapper
 .menu {
+    margin-top: -12px;
     padding: 8px 0;
+}
+
+.menu-items-wrapper {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
 }
 
 // Menu Item

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
@@ -15,11 +16,11 @@ import {
     QuestionIcon,
     SettingIcon,
 } from '~/components/Icon'
-import Button from '~/components/Button'
+import config from '~/configs'
 import styles from './Header.module.scss'
 import images from '~/assets/images'
+import Button from '~/components/Button'
 import Menu from '~/components/Popper/Menu'
-import { Link } from 'react-router-dom'
 import Search from '../Search'
 
 const cx = classNames.bind(styles)
@@ -49,7 +50,7 @@ const menuItems = [
     {
         icon: <QuestionIcon />,
         title: 'Feedback and help',
-        to: '/feedback',
+        to: config.routes.feekback,
     },
     {
         icon: <KeyboardIcon />,
@@ -61,23 +62,20 @@ const userMenuItems = [
     {
         icon: <ProfileIcon />,
         title: 'View Profile',
-        to: '/feedback',
+        to: config.routes.profile,
     },
     {
         icon: <GetCoinsIcon />,
         title: 'Get Coins',
-        to: '/feedback',
     },
     {
         icon: <SettingIcon />,
         title: 'Settings',
-        to: '/feedback',
     },
     ...menuItems,
     {
         icon: <LogoutIcon />,
         title: 'Log out',
-        to: '/feedback',
     },
 ]
 

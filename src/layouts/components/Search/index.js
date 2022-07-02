@@ -4,10 +4,10 @@ import Tippy from '@tippyjs/react/headless'
 import classNames from 'classnames/bind'
 
 import { ClearIcon, LoadingIcon, SearchIcon } from '~/components/Icon'
+import { useDebounce } from '~/hooks'
+import * as searchServices from '~/services/search'
 import AccountItem from '~/components/AccountItem'
 import styles from './Search.module.scss'
-import { useDebounce } from '~/hooks'
-import * as searchServices from '~/apiServices/search'
 
 const cx = classNames.bind(styles)
 
@@ -91,7 +91,12 @@ function Search() {
                     </button>
                 )}
                 <span className={cx('splitter')}></span>
-                <button className={cx('search-btn')}>
+                <button
+                    className={cx('search-btn')}
+                    onMouseDown={(e) => {
+                        e.preventDefault()
+                    }}
+                >
                     <SearchIcon />
                 </button>
             </div>

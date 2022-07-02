@@ -24,12 +24,12 @@ html {
 }
 
 body {
+    color: var(--text-color);
     font-family: 'ProximaNova', sans-serif;
     font-size: 1.6rem;
+    overflow-y: overlay;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    color: var(--text-color);
-
     input {
         font-family: 'ProximaNova', sans-serif;
     }
@@ -45,6 +45,37 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+// Custome scrollbar
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 // Fonts embeded
