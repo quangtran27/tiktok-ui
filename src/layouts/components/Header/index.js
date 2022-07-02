@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
@@ -135,5 +136,7 @@ function Header() {
         </header>
     )
 }
+
+Header.propTypes = {}
 
 export default Header
